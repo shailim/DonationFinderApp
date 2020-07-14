@@ -38,7 +38,7 @@ function sendInfo() {
 		}); 
 		console.log(items); 
 		let xhttp = new XMLHttpRequest(); 
-		xhttp.open("POST", "homeorg.do", true); 
+		xhttp.open("POST", "orghome.do", true); 
 		xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 		xhttp.send("name=" + name + "&address=" + address + "&phone=" + phone + "&email=" + email + "&items=" + items + "&id=${id}");
 		document.getElementById("last").remove(); 

@@ -73,7 +73,7 @@ footer p {
 		</div>  
 		<ul class="nav navbar-nav navbar-right">
 		<li><a href="/home.do">Home</a></li>
-		<li><a href="/donorsearch.do">Donator</a></li>
+		<li><a href="/donator.do">Donator</a></li>
 		<li><a href="/orglogin.do">Organization</a></li> 
 		</ul> 
 	</div> 

@@ -11,7 +11,7 @@
 </head>
 <body>
 <form action="/donator.do" method="post">
-<input type="text" placeholder="Search for item..." name="query"> 
+<input type="text" placeholder="Search for an item..." name="query"> 
 <input type="submit"> 
 </form>
 <h4>${noneMessage}</h4> 

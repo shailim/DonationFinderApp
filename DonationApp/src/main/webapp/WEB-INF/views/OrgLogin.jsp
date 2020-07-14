@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Log In</title>
+<title>Organization</title>
 </head>
 <body> 
 <p style="color:red">${errorMessage}</p>

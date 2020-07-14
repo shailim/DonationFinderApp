@@ -9,16 +9,7 @@ import javax.servlet.ServletException;
 public class WelcomePage extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request,  response);
+		request.getRequestDispatcher("/WEB-INF/views/WelcomePage.jsp").forward(request,  response);
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String value = request.getParameter("choose"); 
-		if (value.equals("org")) {
-			response.sendRedirect("/orgmain.do"); 
-		}
-		else {
-			response.sendRedirect("/donorsearch.do");
-		}
-	}
 }
