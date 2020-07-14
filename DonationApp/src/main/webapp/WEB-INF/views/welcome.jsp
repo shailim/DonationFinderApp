@@ -18,7 +18,7 @@ button {
 	height: 50px; 
 	margin: 0 auto; 
 }
-form {
+div {
 	position: relative; 
 	top: 70px; 
 	left: 42%; 
@@ -34,11 +34,11 @@ form {
 <h1>Welcome to Donation Finder!</h1> 
 <h4>Here we provide a faster, easier way for organizations and donators to interact with each other.
    Let'd get started!</p> 
-<form method="POST">
+<div>
 <p>Are you an</p> 
-<button type="submit" name="choose" value="org">Organization</button> 
+<a href="/orglogin.do"><button type="submit">Organization</button></a>
 <p>Or a</p> 
-<button type="submit" name="choose" value="donor">Donator</button> 
-</form> 
+<a href="/donator.do"><button type="submit">Donator</button></a>
+</div> 
 </body> 
 </html>

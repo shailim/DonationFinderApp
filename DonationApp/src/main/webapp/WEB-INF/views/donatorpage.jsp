@@ -10,7 +10,7 @@
    crossorigin=""></script> 
 </head>
 <body>
-<form action="/donorsearch.do" method="post">
+<form action="/donator.do" method="post">
 <input type="text" placeholder="Search for item..." name="query"> 
 <input type="submit"> 
 </form>

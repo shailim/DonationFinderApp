@@ -5,7 +5,7 @@
 	<display-name>Donation Finder</display-name>
 	
 	<welcome-file-list>
-		<welcome-file>welcome.do</welcome-file>
+		<welcome-file>home.do</welcome-file>
 	</welcome-file-list>
 	
 </web-app>
