@@ -9,6 +9,6 @@
 <p>Password: </p> <input type="text" name="password"> 
 <input type="submit"> 
 </form> 
-<a href="orgsignup.do">Create An Account</a>
+<a href="orgsignup.do">Create an Account</a>
 </body>
 </html>
