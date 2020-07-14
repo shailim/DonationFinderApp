@@ -1,6 +1,8 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <html>
 <head>
 <title>Organization</title>
+<%@ include file="header.html" %>
 </head>
 <body> 
 <p style="color:red">${errorMessage}</p>

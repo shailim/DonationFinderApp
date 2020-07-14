@@ -24,11 +24,11 @@ public class DonatorPage extends HttpServlet {
 		ArrayList<OrgClass> matches = list.searchOrg(query); 
 		if (matches.size() == 0) {
 			request.setAttribute("noneMessage", "Sorry! Currently no organizations have listed this item.");
-			request.getRequestDispatcher("/WEB-INF/views/donorsearch.jsp").forward(request,  response);
+			request.getRequestDispatcher("/WEB-INF/views/DonatorPage.jsp").forward(request,  response);
 		}
 		else {
 			request.setAttribute("matches", matches);
-			request.getRequestDispatcher("/WEB-INF/views/donorsearch.jsp").forward(request,  response);
+			request.getRequestDispatcher("/WEB-INF/views/DonatorPage.jsp").forward(request,  response);
 		}
 	}
 

@@ -2,12 +2,31 @@
 <html>
 <head>
 <title>DonationFinder</title>
+<%@ include file="header.html" %>
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script> 
+<style>
+	form {
+		position: relative; 
+		top: 70px; 
+	}
+	h4 {
+		position: relative; 
+		top: 85px; 
+	}
+	#mapid {
+		position: relative; 
+		top: 100px; 
+	}
+	#info {
+		position: relative; 
+		top: 150px; 
+	}
+</style>
 </head>
 <body>
 <form action="/donator.do" method="post">

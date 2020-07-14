@@ -1,6 +1,8 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <html>
 <head>
 <title>DonationFinder</title>
+<%@ include file="header.html" %>
 <style> 
 input {
 	display: inline-block; 
