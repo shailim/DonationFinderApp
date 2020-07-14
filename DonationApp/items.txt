@@ -1,3 +1,2 @@
 01178a98-6195-4f22-8534-96b848eb614e,bananas,bread,canned soup
 27a0b01e-0f3d-45ee-bc48-4f1dc5383f84,bananas,books,shoes,socks
-7a5463d8-2a77-4255-a65f-c772351d3ffd,
