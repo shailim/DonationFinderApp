@@ -35,7 +35,7 @@ div {
 <body>
 <h1>Welcome to Donation Finder!</h1> 
 <h4>Here we provide a faster, easier way for organizations and donators to interact with each other.
-   Let'd get started!</p> 
+   Let's get started!</p> 
 <div>
 <p>Are you an</p> 
 <a href="/orglogin.do"><button type="submit">Organization</button></a>
