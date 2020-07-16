@@ -33,7 +33,7 @@ div {
 </head>
 
 <body>
-<h1>Welcome to Donation Finder!</h1> 
+<h1>Welcome to Donation Finder.</h1> 
 <h4>Here we provide a faster, easier way for organizations and donators to interact with each other.
    Let's get started!</p> 
 <div>
