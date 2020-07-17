@@ -79,7 +79,7 @@ body {
 	<div id="gobtn"> <a href="/welcome.do"><button type="submit"class="btn btn-primary btn-lg" style="background: #fbaf08;border:none;color:#444444">Get Started</button></a> </div>  
 </div> 
 <div id="second-block" class="container-fluid">
-	<h2>Something</h2> 
+	<h2>Some Info</h2> 
 </div> 
 <%@ include file="footer.html" %>
 <script>

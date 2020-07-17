@@ -4,14 +4,22 @@
 <title>DonationFinder</title>
 <%@ include file="header.html" %>
 <style> 
-input {
-	display: inline-block; 
+body {
+	position: relative; 
+	top: 100px; 
+	font-family: 'Open Sans', sans-serif; 
+}
+button {
+	background: #fbaf08; 
+	border: none; 
+	color: #444444; 
 }
 </style>
 </head>
 
 <body>
 <h3>We're glad you're using Donation Finder! Please fill out the form below to submit your information.</h3> 
+<br>
 <div id="orginfo">
 <p>Name: </p> <input name="name" id="name" placeholder="Enter Organization Name...">
 <p>Username: </p> <input name="username" id="username" placeholder="Enter username..."> 
@@ -24,7 +32,7 @@ input {
 <input name="items[]" placeholder="enter item...">
 </div> 
 <button id="add" onclick="addTextBox()">+</button>
-</div>  
+</div>
 <br>  
 <button type="submit" onclick="sendInfo()" id="last">Submit</button> 
 
@@ -60,7 +68,7 @@ input {
 		newbox.name = "items[]"; 
 		newbox.placeholder = "enter item..."; 
 		newdiv.appendChild(newbox); 
-		let newbtn = document.createElement("button"); 
+		let newbtn = document.createElement("button");  
 		newbtn.innerHTML = "X";   
 		newbtn.onclick = function() {
 			this.parentNode.remove(); 
@@ -69,5 +77,6 @@ input {
 		document.getElementById("iteminfo").appendChild(newdiv);
 	}
 </script>
+<%@ include file="footer.html" %>
 </body>
 </html>

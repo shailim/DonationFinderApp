@@ -5,16 +5,16 @@
 <%@ include file="header.html" %>
 <style>
 	body {
-		background: linear-gradient(90deg, #ff2400, orange, #fbaf08, yellow);
-		background-size: 400%; 
+		background: linear-gradient(180deg, #ff2400, orange, #fbaf08, yellow, #9ACD32);
+		background-size: 100% 400%; 
 		position: relative; 
 		top: 200px; 
 		font-family: 'Open Sans', sans-serif; 
 		animation: gradient 16s linear infinite alternate; 
 	}
 	@keyframes gradient {
-		0% {background-position: 0%}
-		100% {background-position: 100%}
+		0% {background-position: 50% 0%}
+		100% {background-position: 50% 100%}
 	}
 	div {
 		text-align: center; 

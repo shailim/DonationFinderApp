@@ -24,7 +24,11 @@
 <script>
 
 function showForm() {
-	document.getElementById("form").style.display = "block"; 
+	if (document.getElementById("form").style.display == "block") {
+		document.getElementById("form").style.display = "none"; 
+	} else {
+		document.getElementById("form").style.display = "block"; 
+	}
 }
 
 function sendInfo() { 
