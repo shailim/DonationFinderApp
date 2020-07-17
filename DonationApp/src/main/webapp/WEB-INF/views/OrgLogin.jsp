@@ -4,7 +4,7 @@
 <title>Organization</title>
 <%@ include file="header.html" %>
 </head>
-<body> 
+<body style="position: relative; top: 100px; font-family: 'Open Sans', sans-serif"> 
 <p style="color:red">${errorMessage}</p>
 <form action="/orglogin.do" method="post">
 <p>Username: </p> <input type="text" name="username">
@@ -12,5 +12,6 @@
 <input type="submit"> 
 </form> 
 <a href="orgsignup.do">Create An Account</a>
+<%@ include file="footer.html" %>
 </body>
 </html>

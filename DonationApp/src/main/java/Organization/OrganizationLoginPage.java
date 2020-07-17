@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet (urlPatterns = "/orglogin.do")
 public class OrganizationLoginPage extends HttpServlet {
+	
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/views/OrgLogin.jsp").forward(request,  response); 
 	}
@@ -26,10 +29,10 @@ public class OrganizationLoginPage extends HttpServlet {
 			request.setAttribute("id", id); 
 			request.setAttribute("details", details);
 			request.setAttribute("items", items);
-			request.getRequestDispatcher("/WEB-INF/views/currentOrgPage.jsp").forward(request,  response);
+			request.getRequestDispatcher("/WEB-INF/views/OrgHomePage.jsp").forward(request,  response);
 		} else {
 			request.setAttribute("errorMessage", "Invalid Credentials! Please try again.");
-			request.getRequestDispatcher("/WEB-INF/views/orglogin.jsp").forward(request,  response); 
+			request.getRequestDispatcher("/WEB-INF/views/OrgLogin.jsp").forward(request,  response); 
 		}
 	}
 }

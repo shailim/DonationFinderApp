@@ -1,13 +1,23 @@
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&family=Rubik:wght@400;500&family=Varela+Round&display=swap');
+body {
+	font-family: 'Rubik', sans-serif;
+}
 nav {
-	background-color: honeydew; 
+	background-color: white; 
+	height: 70px; 
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 nav a, nav span {
 	color: #444444;
 	font-size: 20px;   
+}
+nav a:hover {
+	color: #fbaf08
 }
 li {
 	padding-right: 25px; 
@@ -16,13 +26,7 @@ li {
 </head>
 <body>
 <nav class="navbar navbar-fixed-top">
-	<div class="container-fluid" style="height:40px; padding-right:30px">
-		<a href="/orglogin.do" style="float:right"><button class="btn btn-link" style="float:right">
-			<span class="glyphicon glyphicon-user"></span> Sign In 
-			</button></a>
-	</div> 
-	<hr style="margin:0">
-	<div class="container-fluid">
+	<div class="container" style="position: relative; top: 10px">
 		<div class="navbar-header" style="padding-left: 25px">
 		<span class="navbar-brand" style="font-size: 25px">DonationFinder</span>
 		</div>  

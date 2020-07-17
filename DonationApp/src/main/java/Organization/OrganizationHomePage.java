@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet (urlPatterns = "/orghome.do")
 public class OrganizationHomePage extends  HttpServlet {
+	
+	private static final long serialVersionUID = 1L;
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		OrgFile x = new OrgFile(); 
 		String id = request.getParameter("id"); 

@@ -5,17 +5,18 @@
 <%@ include file="header.html" %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
+body {
+	font-family: 'Open Sans', sans-serif; 
+	position: relative; 
+	top: 50px; 
+}
 #first-block {   
 	position: relative; 
-	 top: 50px; 
-	height: 600px; 
-	z-index: 1; 
+	height: 550px; 
+	z-index: 1;
+	background-color: white; 
 }
 #bg {
-	background: url(https://images.pexels.com/photos/255441/pexels-photo-255441.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200); 
-	background-repeat: no-repeat; 
-	background-size: cover;
-	opacity: 0.7; 
 	position: absolute; 
 	z-index: -1; 
 	top: 0;
@@ -24,59 +25,100 @@
 	right: 0; 
 	width: 100%; 
 	height: 100%; 
-}
+} 
 #title {
 	width: 60%; 
 	height: auto; 
 	position: relative;  
-	top: 25%; 
+	top: 20%; 
 	left: 20%; 
 	text-align: center; 
+}
+.circle {
+	width: 100px; 
+	height: 100px; 
+	border-radius: 50px;
+	background-color: gold; 
+	position: relative; 
+	display: inline-block; 
+	z-index: -1;  
 }
 #gobtn, h2, p {
 	text-align: center; 
 	position: relative; 
-	top: 30%; 
+	top: 20%; 
+	line-height: 40px; 
+}
+#title h2 {
+	line-height: 60px; 
+	font-size: 45px; 
+	font-weight: 800; 
+	background: -webkit-linear-gradient(left, #ff2400, #fbaf08);
+	-webkit-background-clip: text; 
+	-webkit-text-fill-color: transparent;  
 }
 #second-block {
-	background-color: honeydew; 
-	height: 550px; 
-}
-#third-block {
-	background-color: DarkOliveGreen;
-	height: 550px; 
-}
-footer {
-	position: relative; 
-	bottom: 0; 
-	height: 40px; 
-	background-color: honeydew; 
-}
-footer p {
-	color: #444444; 
-	margin: 0; 
-	padding: 0; 
+	background-image: linear-gradient(to bottom, #FFFFFF 5%, #fbaf08 100%); 
+	height: 650px; 
 }
 </style>
 </head>
 <body>
 <div id="first-block" class="container-fluid">
-	<div id="bg"></div>
+	<div id="bg">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
 	<div id="title">
-	<h2 style="color:white; font-size: 45px; font-weight: bold">Donation Finder Makes It Easier and Faster</h2> <br>
-	<p style="color:white; font-size: 20px">Look up any item you want to donate and find the exact location of matching organizations in seconds. 
+	<h2>Search. Locate. Donate.</h2> <br>
+	<p style="font-size: 18px">Look up any item you want to donate and find the exact location of matching organizations in seconds. 
 		Save yourself hours of browsing the web and go the easier route with DonationFinder.</p> <br>
 	</div>  
-	<div id="gobtn"> <a href="/welcome.do"><button type="submit"class="btn btn-primary btn-lg">Get Started</button></a> </div>  
+	<div id="gobtn"> <a href="/welcome.do"><button type="submit"class="btn btn-primary btn-lg" style="background: #fbaf08;border:none;color:#444444">Get Started</button></a> </div>  
 </div> 
 <div id="second-block" class="container-fluid">
-	<h2>Some Statistics</h2> 
+	<h2>Something</h2> 
 </div> 
-<div id="third-block" class="container-fluid">
-	<h2 style="color: honeydew">Corona updates</h2> 
-</div>
-<footer class="container-fluid">
-	<p>@2020 Copyright: DonationFinder</p> 
-</footer>
+<%@ include file="footer.html" %>
+<script>
+	var circles = document.querySelectorAll(".circle"); 
+	for (var i = 0; i < circles.length; i++) {
+		var circle = circles[i]; 
+		animateCircles(circle); 
+	}
+	
+	function animateCircles(circle) {
+		circle.animate([
+			{
+				opacity: 0,
+				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+			},
+			{
+				opacity: 1,
+				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+			},
+			{
+				opacity: 0,
+				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+			},
+			{
+				opacity: 1,
+				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+			},
+			{
+				opacity: 0,
+				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+			}], 
+			{
+				duration: 10000,
+				fill: "forwards",
+				easing: "ease-out",
+				iterations: 3
+			}
+		); 
+	}
+</script>
 </body>
 </html>

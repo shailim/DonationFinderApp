@@ -21,9 +21,10 @@ public class OrgClass {
 				name = reader.next();
 				address = reader.next(); 
 				phone = reader.next(); 
-				email = reader.next(); 
+				email = reader.next();
 				break; 
 			}
+			reader.close(); 
 		}
 		sc.close(); 
 	}

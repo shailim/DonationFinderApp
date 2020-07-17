@@ -1,2 +1,7 @@
 01178a98-6195-4f22-8534-96b848eb614e,ffs,ffs
 27a0b01e-0f3d-45ee-bc48-4f1dc5383f84,stlk,stlk
+884cdca5-5b9d-4526-a92b-9eaa31f973ee,mom,mom
+e22642aa-1f98-4a28-b007-bbaa1e17ff4a,bgclub,bgclub
+13db18e7-1f34-46bf-9d35-7d0d1182023b,sage,sage
+df76bceb-4098-45af-b35d-c1cb3a908ae5,heritage,heritage
+df8b7c08-d694-47e8-9a71-1732f2d7a588,scitech,scitech

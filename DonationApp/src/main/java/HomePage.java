@@ -8,6 +8,8 @@ import javax.servlet.ServletException;
 @WebServlet (urlPatterns = "/home.do")
 public class HomePage extends HttpServlet {
 	
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/views/HomePage.jsp").forward(request,  response);
 	}

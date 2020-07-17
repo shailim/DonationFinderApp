@@ -49,11 +49,13 @@ public class OrgFile {
 			if (reader.next().equals(id)) {
 				oldLine = str; 
 			}
+			reader.close(); 
 		}
 		String newContent = oldContent.replaceAll(oldLine, newLine); 
 		FileWriter fw = new FileWriter("details.txt", false); 
 		fw.write(newContent); 
 		fw.close(); 
+		sc.close(); 
 		
 		file = new File("items.txt");
 		sc = new Scanner(file); 
@@ -68,11 +70,13 @@ public class OrgFile {
 			if (reader.next().equals(id)) {
 				oldLine = str; 
 			}
+			reader.close(); 
 		}
 		newContent = oldContent.replaceAll(oldLine, newLine); 
 		fw = new FileWriter("items.txt", false); 
 		fw.write(newContent);
 		fw.close(); 
+		sc.close(); 
 	}
 	
 	public boolean verifyOrg(String username, String password) throws FileNotFoundException {
@@ -87,6 +91,7 @@ public class OrgFile {
 				reader.close();
 				return true; 
 			}
+			reader.close(); 
 		}
 		sc.close(); 
 		return false; 
@@ -110,7 +115,9 @@ public class OrgFile {
 				break; 
 				
 			}
+			reader.close(); 
 		}
+		sc.close(); 
 		return currentOrgDetails; 
 	}
 	
@@ -128,7 +135,9 @@ public class OrgFile {
 				break; 
 				
 			}
+			reader.close(); 
 		}
+		sc.close();
 		return currentOrgItems;
 	}
 	
@@ -143,6 +152,7 @@ public class OrgFile {
 			if (reader.nextLine().contains(query)) {
 				matches.add(new OrgClass(currentOrgId)); 
 			}
+			reader.close(); 
 		}
 		
 		sc.close(); 

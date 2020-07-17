@@ -4,43 +4,40 @@
 <title>DonationFinder</title> 
 <%@ include file="header.html" %>
 <style>
-h4 {
-	text-align: center; 
-	position: relative; 
-	top: 130px; 
-}
-h1 {
-	text-align: center;
-	position: relative; 
-	top: 100px;  
-}
-button {
-	text-align: center; 
-	width: 100px; 
-	height: 50px; 
-	margin: 0 auto; 
-}
-div {
-	position: relative; 
-	top: 70px; 
-	left: 42%; 
-	display: flex; 
-	flex-direction: column;
-	width: 200px; 
-	height: auto;  
-}
+	body {
+		background: linear-gradient(90deg, #ff2400, orange, #fbaf08, yellow);
+		background-size: 400%; 
+		position: relative; 
+		top: 200px; 
+		font-family: 'Open Sans', sans-serif; 
+		animation: gradient 16s linear infinite alternate; 
+	}
+	@keyframes gradient {
+		0% {background-position: 0%}
+		100% {background-position: 100%}
+	}
+	div {
+		text-align: center; 
+		font-size: 26px; 
+		line-height: 45px; 
+		z-index: 1; 
+	}
+	button { 
+		width: 250px;
+		height: 60px; 
+		font-size: 22px; 
+		border-radius: 9px; 
+		margin-bottom: 40px; 
+	}
 </style>
 </head>
-
 <body>
-<h1>Welcome to Donation Finder!</h1> 
-<h4>Here we provide a faster, easier way for organizations and donators to interact with each other.
-   Let'd get started!</p> 
 <div>
 <p>Are you an</p> 
-<a href="/orglogin.do"><button type="submit">Organization</button></a>
+<a href="/orglogin.do"><button type="submit" style="background: white;border:none;color:#444444">Organization</button></a>
 <p>Or a</p> 
-<a href="/donator.do"><button type="submit">Donator</button></a>
+<a href="/donator.do"><button type="submit" style="background: white;border:none;color:#444444">Donator</button></a>
 </div> 
+<%@ include file="footer.html" %>
 </body> 
 </html>

@@ -7,7 +7,9 @@ import javax.servlet.ServletException;
 
 @WebServlet (urlPatterns = "/welcome.do")
 public class WelcomePage extends HttpServlet{
-	
+
+	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/views/WelcomePage.jsp").forward(request,  response);
 	}

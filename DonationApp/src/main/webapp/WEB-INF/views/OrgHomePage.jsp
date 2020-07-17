@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>Your Organization</title> 
+<%@ include file="header.html" %>
 </head>
-<body>
+<body style="position: relative; top: 100px">
 <h3></h3> 
 <button onclick="showForm()">Edit Profile</button> 
 <div id="form" style="display: none">

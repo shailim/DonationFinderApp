@@ -10,36 +10,50 @@
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script> 
 <style>
-	form {
-		position: relative; 
-		top: 70px; 
-	}
-	h4 {
-		position: relative; 
-		top: 85px; 
-	}
-	#mapid {
+	body {
+		font-family: 'Open Sans', sans-serif; 
+		font-size: 15px; 
 		position: relative; 
 		top: 100px; 
 	}
+	#mapid {
+		border-radius: 12px;  
+	}
 	#info {
-		position: relative; 
-		top: 150px; 
+		margin-top: 15px; 
+		border-radius: 15px; 
+		background-color: #fbaf08;
+		/*#94f0f1*/ 
+	}
+	#info details {
+		padding: 13px; 
+	}
+	#info summary:focus {
+		outline: none;
+	}
+	#info pre {
+		background: white; 
+		border: none; 
+		line-height: 30px; 
+		font-family: 'Rubik', sans-serif; 
 	}
 </style>
 </head>
 <body>
-<form action="/donator.do" method="post">
-<input type="text" placeholder="Search for an item..." name="query"> 
-<input type="submit"> 
+<form class="container" action="/donator.do" method="post"> 
+<p>Enter the item to donate: </p>
+<input class="well well-sm" type="text" placeholder="Search for an item..." name="query"> 
+<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
 </form>
-<h4>${noneMessage}</h4> 
-<div id="mapid" style="height:400px"></div> 
-<div id="info"></div>
+<div class="container" id="mapid" style="height:400px"></div> 
+<div class="container" id="info">
+	<b>Results: </b>
+	<span>  ${noneMessage}</span>
+</div>
    
 <script>
-getCoords(); 
 
+getCoords(); 
 async function getCoords() {
 let url = ""; 
 let response = ""; 
@@ -60,7 +74,7 @@ createMap(coords);
 }
 
 function createMap(coords) {
-var mymap = L.map('mapid').setView([33.1507, -96.8236], 10);
+var mymap = L.map('mapid').setView([33.1507, -96.82], 10);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic20yMDAwIiwiYSI6ImNrYnY5ZzBoeDAzdWgzMXFseDF2em1sbXMifQ.5FYP7T__mOa-gRLYT2QEDw', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -79,14 +93,25 @@ i++;
 
 addInfo(); 
 function addInfo() {
-let p; 
+let details; 
+let summary; 
+let pre;
 <c:forEach items="${matches}" var="match"> 
-p = document.createElement("p"); 
-p.innerHTML = `<b>${match.name}:</b>\u00A0\u00A0\u00A0\u00A0${match.address}\u00A0\u00A0\u00A0\u00A0${match.phone}\u00A0\u00A0\u00A0\u00A0${match.email}`; 
-document.getElementById("info").appendChild(p); 
+details = document.createElement("details"); 
+summary = document.createElement('summary');
+pre = document.createElement('pre'); 
+summary.innerHTML = `${match.name}`; 
+pre.innerHTML = 
+`Address: ${match.address}
+Phone: ${match.phone}
+Email: ${match.email}`; 
+details.appendChild(summary); 
+details.appendChild(pre); 
+document.getElementById("info").appendChild(details); 
 </c:forEach>
 }
 
 </script>
 </body>
+<%@ include file="footer.html" %>
 </html>
