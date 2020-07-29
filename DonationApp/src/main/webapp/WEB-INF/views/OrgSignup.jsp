@@ -56,9 +56,9 @@ button {
 		xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 		xhttp.send("name=" + name + "&username=" + username + "&password=" + password + "&address=" + address + 
 		"&phone=" + phone + "&email=" + email + "&items=" + items);
-		document.getElementById("last").remove(); 
-		let p = document.createElement("p"); 
-		p.innerHTML = "Thank you for submitting the form!"; 
+		let btn = document.getElementById("last");
+		btn.innerHTML = "Submitted!";
+		btn.style.background = "green"; 
 		document.getElementById("orginfo").appendChild(p);  
 	}
 	

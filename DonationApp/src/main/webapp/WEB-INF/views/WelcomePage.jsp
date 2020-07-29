@@ -10,7 +10,7 @@
 		position: relative; 
 		top: 200px; 
 		font-family: 'Open Sans', sans-serif; 
-		animation: gradient 16s linear infinite alternate; 
+		animation: gradient 5s linear infinite alternate; 
 	}
 	@keyframes gradient {
 		0% {background-position: 50% 0%}

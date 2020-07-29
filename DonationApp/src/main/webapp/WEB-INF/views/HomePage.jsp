@@ -4,6 +4,7 @@
 <title>Donation Finder</title>
 <%@ include file="header.html" %>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 <style>
 body {
 	font-family: 'Open Sans', sans-serif; 
@@ -37,17 +38,28 @@ body {
 .circle {
 	width: 100px; 
 	height: 100px; 
-	border-radius: 50px;
-	background-color: gold; 
+	border-radius: 50px; 
 	position: relative; 
 	display: inline-block; 
 	z-index: -1;  
 }
+.gold {
+	background-color: gold;
+}
+.blue {
+	background-color: #CCFFFF; 
+}
+.pink {
+	background-color: #FFCCCC;
+}
 #gobtn, h2, p {
 	text-align: center; 
 	position: relative; 
-	top: 20%; 
+	top: 12%; 
 	line-height: 40px; 
+}
+#gobtn {
+	top: 20%; 
 }
 #title h2 {
 	line-height: 60px; 
@@ -59,17 +71,25 @@ body {
 }
 #second-block {
 	background-image: linear-gradient(to bottom, #FFFFFF 5%, #fbaf08 100%); 
-	height: 650px; 
+	 
+}
+#firstChart, #secondChart {
+	position: relative; 
+	display: inline-block; 
 }
 </style>
 </head>
 <body>
 <div id="first-block" class="container-fluid">
 	<div id="bg">
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
-		<div class="circle"></div>
+		<div class="circle gold"></div>
+		<div class="circle pink"></div>
+		<div class="circle blue"></div>
+		<div class="circle blue"></div>
+		<div class="circle gold"></div>
+		<div class="circle pink"></div>
+		<div class="circle gold"></div>
+		<div class="circle blue"></div>
 	</div>
 	<div id="title">
 	<h2>Search. Locate. Donate.</h2> <br>
@@ -79,9 +99,78 @@ body {
 	<div id="gobtn"> <a href="/welcome.do"><button type="submit"class="btn btn-primary btn-lg" style="background: #fbaf08;border:none;color:#444444">Get Started</button></a> </div>  
 </div> 
 <div id="second-block" class="container-fluid">
-	<h2>Some Info</h2> 
+	<h2>Covid-19 Info</h2> 
+	<div id="firstChart"></div>
+	<div id="secondChart"</div>
 </div> 
 <%@ include file="footer.html" %>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+totalCasesGraph(); 
+growthGraph(); 
+async function totalCasesGraph() {
+  	let url = "https://covid19-update-api.herokuapp.com/api/v1/cases/graphs/totalCases"; 
+	let response = await fetch(url);
+	let info = await response.json();
+	let xvals = []; 
+	let yvals = [];
+	for (var i = 0, j = 0; i < info.graph.data.length; i++, j++) {
+		xvals.push(info.graph.categories[j]);
+		yvals.push(info.graph.data[i]/1000000); 
+	}
+	var myConfig = {
+		"type": 'line',
+		"scaleX": {
+			labels: xvals
+		},
+		"scaleY": {
+			label: { text: 'Total Coronavirus Cases (M)'}
+		},
+		"series": [
+			{
+				values: yvals
+			}
+		]
+	}
+	zingchart.render({
+		id: 'firstChart',
+		data: myConfig,
+		height: 400,
+		width: 600
+	});
+}
+async function growthGraph() {
+  	let url = "https://covid19-update-api.herokuapp.com/api/v1/cases/graphs/growthFactor"; 
+	let response = await fetch(url);
+	let info = await response.json();
+	let xvals = []; 
+	let yvals = [];
+	for (var i = 0, j = 0; i < info.graph.data.length; i++, j++) {
+		xvals.push(info.graph.categories[j]);
+		yvals.push(info.graph.data[i]); 
+	}
+	var myConfig = {
+		"type": 'line',
+		"scaleX": {
+			labels: xvals
+		},
+		"scaleY": {
+			label: { text: 'Daily Cases Growth Factor'}
+		},
+		"series": [
+			{
+				values: yvals
+			}
+		]
+	}
+	zingchart.render({
+		id: 'secondChart',
+		data: myConfig,
+		height: 400,
+		width: 600
+	});
+}
+</script>
 <script>
 	var circles = document.querySelectorAll(".circle"); 
 	for (var i = 0; i < circles.length; i++) {
@@ -93,29 +182,29 @@ body {
 		circle.animate([
 			{
 				opacity: 0,
-				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+				transform: "translate3d(" + (Math.random() * 600) + "px, " + (Math.random() * 500) + "px, 0px)"
 			},
 			{
 				opacity: 1,
-				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+				transform: "translate3d(" + (Math.random() * 600) + "px, " + (Math.random() * 500) + "px, 0px)"
 			},
 			{
 				opacity: 0,
-				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+				transform: "translate3d(" + (Math.random() * 600) + "px, " + (Math.random() * 500) + "px, 0px)"
 			},
 			{
 				opacity: 1,
-				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+				transform: "translate3d(" + (Math.random() * 600) + "px, " + (Math.random() * 500) + "px, 0px)"
 			},
 			{
 				opacity: 0,
-				transform: "translate3d(" + (Math.random() * 1200) + "px, " + (Math.random() * 600) + "px, 0px)"
+				transform: "translate3d(" + (Math.random() * 600) + "px, " + (Math.random() * 500) + "px, 0px)"
 			}], 
 			{
 				duration: 10000,
 				fill: "forwards",
 				easing: "ease-out",
-				iterations: 3
+				iterations: Infinity
 			}
 		); 
 	}
