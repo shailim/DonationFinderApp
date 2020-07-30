@@ -14,6 +14,16 @@ button {
 	border: none; 
 	color: #444444; 
 }
+h3{
+	text-align: center;
+}
+#orginfo
+{
+	text-align: center;
+}
+p{
+  	width: 90%;
+}
 </style>
 </head>
 
