@@ -32,19 +32,19 @@ p{
 <br>
 <div id="orginfo">
 <p>Name: </p> <input name="name" id="name" placeholder="Enter Organization Name...">
-<p>Username: </p> <input name="username" id="username" placeholder="Enter username..."> 
-<p>Password: </p> <input name="password" id="password" placeholder="Enter password..."> 
-<p>Address: </p> <input name="address" id="address" placeholder="Enter your Address..."> 
-<p>Phone Number: </p> <input name="phone" id="phone" placeholder="Enter phone number...">
-<p>Email: </p> <input name="email" id="email" placeholder="Enter email..."> 
+<p style="width: 92%;">Username: </p> <input name="username" id="username" placeholder="Enter username...">
+<p style="width: 92%;">Password: </p> <input name="password" id="password" placeholder="Enter password...">
+<p style="width: 91%;">Address: </p> <input name="address" id="address" placeholder="Enter your Address...">
+<p style="width: 95%;"> Phone Number: </p> <input name="phone" id="phone" placeholder="Enter phone number...">
+<p>Email: </p> <input name="email" id="email" placeholder="Enter email...">
 <div id="iteminfo">
-<p>Items Needed: (Feel free to add as many as you want)</p> 
+<p style="width: 105%;">Items Needed: (Feel free to add as many as you want)</p>
 <input name="items[]" placeholder="enter item...">
-</div> 
+</div>
 <button id="add" onclick="addTextBox()">+</button>
 </div>
-<br>  
-<button type="submit" onclick="sendInfo()" id="last">Submit</button> 
+<br>
+<button type="submit" onclick="sendInfo()" id="last" style="background: #fbaf08;border:none;color:#444444">Submit</button>
 
 <script>
 	
