@@ -9,28 +9,62 @@ body {
 	top: 100px; 
 	font-family: 'Open Sans', sans-serif; 
 }
-button {
+#add{
+Display: inlineblock;
+        background: #fbaf08; 
+	border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+}  
+#last {
 	background: #fbaf08; 
 	border: none; 
-	color: #444444; 
+	padding: 12px 18px;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        Margin-top: 10px;
+         Font-size: 13px;
+
 }
-h3{
+#welcomeStatement{
 	text-align: center;
+        color: #b35900;
+}
+Input{
+Width: 325px;
+Height: 20px;
+
 }
 #orginfo
 {
 	text-align: center;
+	Padding-left: 60px;
+        Padding-top: 20px;
+        Padding-bottom: 20px;
+        Background-color: #f3f3f3;
 }
 p{
   	width: 90%;
+	Padding: 5px;
+}
+#formStyle
+{
+ Width : 50%;
+Margin: auto;
+Padding-bottom: 40px;
+
 }
 </style>
 </head>
 
 <body>
-<h3>We're glad you're using Donation Finder! Please fill out the form below to submit your information.</h3> 
+<h3 id = "welcomeStatement">We're glad you're using Donation Finder! Please fill out the form below to submit your information.</h3> 
 <br>
+<div id = "formStyle">
 <div id="orginfo">
+<h3> Sign Up </h3>
 <p>Name: </p> <input name="name" id="name" placeholder="Enter Organization Name...">
 <p style="width: 92%;">Username: </p> <input name="username" id="username" placeholder="Enter username...">
 <p style="width: 92%;">Password: </p> <input name="password" id="password" placeholder="Enter password...">
@@ -39,13 +73,13 @@ p{
 <p>Email: </p> <input name="email" id="email" placeholder="Enter email...">
 <div id="iteminfo">
 <p style="width: 105%;">Items Needed: (Feel free to add as many as you want)</p>
-<input name="items[]" placeholder="enter item...">
-</div>
+<input name="items[]" placeholder="Enter item...">
 <button id="add" onclick="addTextBox()">+</button>
 </div>
+
 <br>
 <button type="submit" onclick="sendInfo()" id="last" style="background: #fbaf08;border:none;color:#444444">Submit</button>
-
+	
 <script>
 	
 	function sendInfo() { 
@@ -89,4 +123,6 @@ p{
 </script>
 <%@ include file="footer.html" %>
 </body>
+</div>
+</div>
 </html>
