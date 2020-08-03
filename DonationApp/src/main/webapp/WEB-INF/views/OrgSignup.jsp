@@ -10,7 +10,7 @@ body {
 	font-family: 'Open Sans', sans-serif; 
 }
 #add{
-Display: inlineblock;
+	display: block;
         background: #fbaf08; 
 	border: none;
         color: white;
@@ -29,20 +29,20 @@ Display: inlineblock;
 
 }
 #welcomeStatement{
-	text-align: center;
+		text-align: center;
         color: #b35900;
 }
 Input{
 Width: 325px;
-Height: 20px;
+Height: 25px;
+margin-bottom: 30px;
 
 }
 #orginfo
 {
-	text-align: center;
-	Padding-left: 60px;
-        Padding-top: 20px;
-        Padding-bottom: 20px;
+	padding-left: 60px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         Background-color: #f3f3f3;
 }
 p{
@@ -56,6 +56,13 @@ Margin: auto;
 Padding-bottom: 40px;
 
 }
+label {
+	display: block;
+	font-weight: normal;
+}
+.iteminput {
+	margin-bottom: 5px; 
+}
 </style>
 </head>
 
@@ -64,26 +71,30 @@ Padding-bottom: 40px;
 <br>
 <div id = "formStyle">
 <div id="orginfo">
-<h3> Sign Up </h3>
-<p>Name: </p> <input name="name" id="name" placeholder="Enter Organization Name...">
-<p style="width: 92%;">Username: </p> <input name="username" id="username" placeholder="Enter username...">
-<p style="width: 92%;">Password: </p> <input name="password" id="password" placeholder="Enter password...">
-<p style="width: 91%;">Address: </p> <input name="address" id="address" placeholder="Enter your Address...">
-<p style="width: 95%;"> Phone Number: </p> <input name="phone" id="phone" placeholder="Enter phone number...">
-<p>Email: </p> <input name="email" id="email" placeholder="Enter email...">
+<h3> Sign Up </h3><br>
+<form action="/orgsignup.do" method="post">
+<label>Name: </label> <input type="text" name="name" id="name" placeholder="Enter Organization Name...">
+<label>Username: </label> <input type="text" name="username" id="username" placeholder="Enter username...">
+<label>Password: </label> <input type="password" name="password" id="password" placeholder="Enter password...">
+<label>Address: </label> <input type="text" name="address" id="address" placeholder="Enter your Address...">
+<label> Phone Number: </label> <input type="tel" name="phone" id="phone" placeholder="Enter phone number...">
+<label>Email: </label> <input type="email" name="email" id="email" placeholder="Enter email...">
 <div id="iteminfo">
-<p style="width: 105%;">Items Needed: (Feel free to add as many as you want)</p>
-<input name="items[]" placeholder="Enter item...">
-<button id="add" onclick="addTextBox()">+</button>
+<label>Items Needed: (Add as many as you want)</label>
+<input class="iteminput" name="items[]" placeholder="Enter item...">
 </div>
+<button type="button" id="add" onclick="addTextBox()">+</button>
 
 <br>
-<button type="submit" onclick="sendInfo()" id="last" style="background: #fbaf08;border:none;color:#444444">Submit</button>
-	
+<button type="submit" onclick="sendInfo()" id="last" style="background: #fbaf08;border:none;color:#444444">Sign Up</button>
+</form>
+<a style="margin-left: 140px" href="orglogin.do">Back to Log In</a>
+</div>
+</div>
 <script>
 	
 	function sendInfo() { 
-		let name = document.getElementById("name").value; 
+		/*let name = document.getElementById("name").value; 
 		let username = document.getElementById("username").value; 
 		let password = document.getElementById("password").value; 
 		let address = document.getElementById("address").value;
@@ -99,10 +110,10 @@ Padding-bottom: 40px;
 		xhttp.open("POST", "orgsignup.do", true); 
 		xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 		xhttp.send("name=" + name + "&username=" + username + "&password=" + password + "&address=" + address + 
-		"&phone=" + phone + "&email=" + email + "&items=" + items);
+		"&phone=" + phone + "&email=" + email + "&items=" + items);*/
 		let btn = document.getElementById("last");
 		btn.innerHTML = "Submitted!";
-		btn.style.background = "green"; 
+		btn.style.background = "lightgreen"; 
 		document.getElementById("orginfo").appendChild(p);  
 	}
 	
@@ -110,10 +121,11 @@ Padding-bottom: 40px;
 		let newdiv = document.createElement("div");  
 		let newbox = document.createElement("input"); 
 		newbox.name = "items[]"; 
-		newbox.placeholder = "enter item..."; 
+		newbox.placeholder = "Enter item..."; 
+		newbox.setAttribute("class", "iteminput")
 		newdiv.appendChild(newbox); 
 		let newbtn = document.createElement("button");  
-		newbtn.innerHTML = "X";   
+		newbtn.innerHTML = "&times;";   
 		newbtn.onclick = function() {
 			this.parentNode.remove(); 
 		};   
@@ -123,6 +135,4 @@ Padding-bottom: 40px;
 </script>
 <%@ include file="footer.html" %>
 </body>
-</div>
-</div>
 </html>

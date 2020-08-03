@@ -28,6 +28,7 @@ public class OrganizationSignUpPage extends HttpServlet {
 			String email = request.getParameter("email"); 
 			String[] items = request.getParameterValues("items");
 			list.addOrg(name, username, password, address, phone, email, items); 
+			request.getRequestDispatcher("/WEB-INF/views/OrgHomePage.jsp").forward(request, response);
 	}
 
 }

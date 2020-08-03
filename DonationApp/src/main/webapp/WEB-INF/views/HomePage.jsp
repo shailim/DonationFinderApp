@@ -101,7 +101,7 @@ body {
 <div id="second-block" class="container-fluid">
 	<h2>Covid-19 Info</h2> 
 	<div id="firstChart"></div>
-	<div id="secondChart"</div>
+	<div id="secondChart"></div>
 </div> 
 <%@ include file="footer.html" %>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

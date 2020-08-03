@@ -8,6 +8,10 @@
 </style>
 </head>
 <style>
+body {
+	position: relative;
+	top: 100px; 
+}
 input[type=text], select {
   font-family: Arial;
   width: 350px;
@@ -38,8 +42,9 @@ margin-left: 60px;
 pre {
 color: #4a4a4a;
 font-weight: 300;
-margin-left: 60px;
-
+margin-left: 45px;
+border: none; 
+background: transparent; 
 
 }
 
@@ -55,7 +60,7 @@ margin-left: 60px;
   font-family: 'Open Sans', sans-serif;
 }
 
-a{
+form a{
     border:none;
     background:none;
     padding:0;
@@ -85,20 +90,20 @@ border-width: 2px;
 </style>
 </head>
 <body> 
-<p style="color:red">${errorMessage}</p>
 <div class = "form">
+<p   style="color:red">${errorMessage}</p>
 <h1 style="font-family: 'Open Sans', sans-serif; color:Black; font-size: 30px; margin-left: 60px;"> Sign In </h1>
-<pre   style="font-family: 'Open Sans', sans-serif; font-size: 19px;"> Sign in to your organisation account to
+<pre   style="font-family: 'Open Sans', sans-serif; font-size: 19px;"> Sign in to your organization account to
  manage your donations list. </pre>
 
-  <form action="/firstPage.do" method = "post">
+  <form action="/orglogin.do" method = "post">
     <label for="uname">Username</label>
     <input type="text" id="uname" name="username" placeholder="Your username">
 
     <label for="pwd">Password</label>
     <input type="password" id="pwd" name="password" placeholder="Your password">
     
-    <input type = "submit" name = "choose"  id = "input1" value = "Sign Up"/>
+    <input type="submit" value="Sign In" id="input1">
 
     <a href="orgsignup.do">Create An Account</a>
 
