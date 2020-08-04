@@ -71,11 +71,13 @@ body {
 }
 #second-block {
 	background-image: linear-gradient(to bottom, #FFFFFF 5%, #fbaf08 100%); 
+	height: 700px;
 	 
 }
 #firstChart, #secondChart {
-	position: relative; 
-	display: inline-block; 
+	text-align: center; 
+	height: 500px; 
+	width: 700px; 
 }
 </style>
 </head>
@@ -84,12 +86,12 @@ body {
 	<div id="bg">
 		<div class="circle gold"></div>
 		<div class="circle pink"></div>
-		<div class="circle blue"></div>
-		<div class="circle blue"></div>
+		<div class="circle gold"></div>
+		<div class="circle gold"></div>
 		<div class="circle gold"></div>
 		<div class="circle pink"></div>
 		<div class="circle gold"></div>
-		<div class="circle blue"></div>
+		<div class="circle pink"></div>
 	</div>
 	<div id="title">
 	<h2>Search. Locate. Donate.</h2> <br>
@@ -100,8 +102,22 @@ body {
 </div> 
 <div id="second-block" class="container-fluid">
 	<h2>Covid-19 Info</h2> 
-	<div id="firstChart"></div>
-	<div id="secondChart"></div>
+	<div id="covid" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner" role="listbox">
+			<div class="carousel-item active">
+				<p>hello</p>
+				<!-- <div class="d-block" id="firstChirt"></div>-->
+			</div>
+			<div class="carousel-item">
+				<p>there</p>
+				<!-- <div class="d-block" id="secondChart"></div>-->
+			</div>
+		</div>
+		<ul class="carousel-indicators">
+             <li data-target="#covid" data-slide-to="0" class="active"></li>
+             <li data-target="#covid" data-slide-to="1"></li>
+        </ul>
+	</div>
 </div> 
 <%@ include file="footer.html" %>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

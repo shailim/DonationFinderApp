@@ -86,15 +86,15 @@ label {
 <button type="button" id="add" onclick="addTextBox()">+</button>
 
 <br>
-<button type="submit" onclick="sendInfo()" id="last" style="background: #fbaf08;border:none;color:#444444">Sign Up</button>
+<button type="submit" id="last" style="background: #fbaf08;border:none;color:#444444">Sign Up</button>
+<a style="margin-left: 190px; font-size: 15px" href="orglogin.do">Log In</a>
 </form>
-<a style="margin-left: 140px" href="orglogin.do">Back to Log In</a>
 </div>
 </div>
 <script>
 	
-	function sendInfo() { 
-		/*let name = document.getElementById("name").value; 
+	/*function sendInfo() { 
+		let name = document.getElementById("name").value; 
 		let username = document.getElementById("username").value; 
 		let password = document.getElementById("password").value; 
 		let address = document.getElementById("address").value;
@@ -110,12 +110,12 @@ label {
 		xhttp.open("POST", "orgsignup.do", true); 
 		xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 		xhttp.send("name=" + name + "&username=" + username + "&password=" + password + "&address=" + address + 
-		"&phone=" + phone + "&email=" + email + "&items=" + items);*/
+		"&phone=" + phone + "&email=" + email + "&items=" + items);
 		let btn = document.getElementById("last");
 		btn.innerHTML = "Submitted!";
 		btn.style.background = "lightgreen"; 
 		document.getElementById("orginfo").appendChild(p);  
-	}
+	}*/
 	
 	function addTextBox() {
 		let newdiv = document.createElement("div");  
