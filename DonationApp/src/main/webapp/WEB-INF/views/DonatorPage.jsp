@@ -31,6 +31,9 @@
 	#info summary:focus {
 		outline: none;
 	}
+	#info summary {
+		cursor: pointer; 
+	}
 	#info pre {
 		background: white; 
 		border: none; 
