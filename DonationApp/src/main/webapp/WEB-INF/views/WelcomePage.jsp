@@ -38,6 +38,5 @@
 <p>Or a</p> 
 <a href="/donator.do"><button type="submit" style="background: white;border:none;color:#444444">Donator</button></a>
 </div> 
-<%@ include file="footer.html" %>
 </body> 
 </html>

@@ -74,11 +74,6 @@ body {
 	height: 700px;
 	 
 }
-#firstChart, #secondChart {
-	text-align: center; 
-	height: 500px; 
-	width: 700px; 
-}
 </style>
 </head>
 <body>
@@ -100,93 +95,7 @@ body {
 	</div>  
 	<div id="gobtn"> <a href="/welcome.do"><button type="submit"class="btn btn-primary btn-lg" style="background: #fbaf08;border:none;color:#444444">Get Started</button></a> </div>  
 </div> 
-<div id="second-block" class="container-fluid">
-	<h2>Covid-19 Info</h2> 
-	<div id="covid" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner" role="listbox">
-			<div class="carousel-item active">
-				<p>hello</p>
-				<!-- <div class="d-block" id="firstChirt"></div>-->
-			</div>
-			<div class="carousel-item">
-				<p>there</p>
-				<!-- <div class="d-block" id="secondChart"></div>-->
-			</div>
-		</div>
-		<ul class="carousel-indicators">
-             <li data-target="#covid" data-slide-to="0" class="active"></li>
-             <li data-target="#covid" data-slide-to="1"></li>
-        </ul>
-	</div>
-</div> 
-<%@ include file="footer.html" %>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script>
-totalCasesGraph(); 
-growthGraph(); 
-async function totalCasesGraph() {
-  	let url = "https://covid19-update-api.herokuapp.com/api/v1/cases/graphs/totalCases"; 
-	let response = await fetch(url);
-	let info = await response.json();
-	let xvals = []; 
-	let yvals = [];
-	for (var i = 0, j = 0; i < info.graph.data.length; i++, j++) {
-		xvals.push(info.graph.categories[j]);
-		yvals.push(info.graph.data[i]/1000000); 
-	}
-	var myConfig = {
-		"type": 'line',
-		"scaleX": {
-			labels: xvals
-		},
-		"scaleY": {
-			label: { text: 'Total Coronavirus Cases (M)'}
-		},
-		"series": [
-			{
-				values: yvals
-			}
-		]
-	}
-	zingchart.render({
-		id: 'firstChart',
-		data: myConfig,
-		height: 400,
-		width: 600
-	});
-}
-async function growthGraph() {
-  	let url = "https://covid19-update-api.herokuapp.com/api/v1/cases/graphs/growthFactor"; 
-	let response = await fetch(url);
-	let info = await response.json();
-	let xvals = []; 
-	let yvals = [];
-	for (var i = 0, j = 0; i < info.graph.data.length; i++, j++) {
-		xvals.push(info.graph.categories[j]);
-		yvals.push(info.graph.data[i]); 
-	}
-	var myConfig = {
-		"type": 'line',
-		"scaleX": {
-			labels: xvals
-		},
-		"scaleY": {
-			label: { text: 'Daily Cases Growth Factor'}
-		},
-		"series": [
-			{
-				values: yvals
-			}
-		]
-	}
-	zingchart.render({
-		id: 'secondChart',
-		data: myConfig,
-		height: 400,
-		width: 600
-	});
-}
-</script>
 <script>
 	var circles = document.querySelectorAll(".circle"); 
 	for (var i = 0; i < circles.length; i++) {

@@ -3,18 +3,54 @@
 <head>
 <title>Your Organization</title> 
 <%@ include file="header.html" %>
+
+<style>
+	h3 {
+		font-size: 30px; 
+		font-weight: 400; 
+	}
+	label {
+		 display: block;
+		 margin-top: 15px;
+		 font-weight: normal; 
+	}
+	input {
+		border: 1px solid #ccc;
+		border-radius: 4px; 
+		height: 30px; 
+		width: 325px; 
+	}
+	body {
+		position: relative; 
+		top: 100px; 
+		margin-left: 20px; 
+		font-family: 'Rubik', sans-serif;
+		background: floralwhite
+	}
+	button {
+		background: #fbaf08;
+		color: #fff; 
+		outline: none;
+		border: none; 
+		border-radius: 4px; 
+	}
+	#last, #first {
+		padding: 10px; 
+	}
+</style>
 </head>
-<body style="position: relative; top: 100px">
+<body>
 <h3></h3> 
-<button onclick="showForm()">Edit Profile</button> 
+<br>
+<button id="first" onclick="showForm()">Edit Profile</button> 
 <div id="form" style="display: none">
-<p>Name: </p> <input name="name" id="name">
-<p>Address: </p> <input name="address" id="address"> 
-<p>Phone Number: </p> <input name="phone" id="phone">
-<p>Email: </p> <input name="email" id="email">
+<label>Name: </label> <input name="name" id="name">
+<label>Address: </label> <input name="address" id="address"> 
+<label>Phone Number: </label> <input name="phone" id="phone">
+<label>Email: </label> <input name="email" id="email">
 <br>
 <div id="itemlist">
-<p>Items Needed: (Feel free to add as many as you want)</p> 
+<label>Items Needed: (Add as many as you want)</label> 
 </div>
 <button id="add" onclick="addTextBox()">+</button>
 <br><br><br>

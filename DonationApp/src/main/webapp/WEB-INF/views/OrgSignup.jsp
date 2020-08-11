@@ -34,8 +34,10 @@ body {
 }
 Input{
 Width: 325px;
-Height: 25px;
+Height: 30px;
 margin-bottom: 30px;
+border-radius: 4px; 
+border: 1px solid #ccc; 
 
 }
 #orginfo
@@ -87,7 +89,7 @@ label {
 
 <br>
 <button type="submit" id="last" style="background: #fbaf08;border:none;color:#444444">Sign Up</button>
-<a style="margin-left: 190px; font-size: 15px" href="orglogin.do">Log In</a>
+<a style="margin-left: 150px; font-size: 15px" href="orglogin.do">Back to Log In</a>
 </form>
 </div>
 </div>
@@ -133,6 +135,5 @@ label {
 		document.getElementById("iteminfo").appendChild(newdiv);
 	}
 </script>
-<%@ include file="footer.html" %>
 </body>
 </html>

@@ -113,5 +113,4 @@ document.getElementById("info").appendChild(details);
 
 </script>
 </body>
-<%@ include file="footer.html" %>
 </html>

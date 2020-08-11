@@ -3,7 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&family=Rubik:wght@400;500&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@300;400;800&family=Rubik:wght@400;500&family=Varela+Round&display=swap');
 body {
 	font-family: 'Rubik', sans-serif;
 }
@@ -12,12 +12,23 @@ nav {
 	height: 70px; 
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
-nav a, nav span {
+nav a {
 	color: #444444;
 	font-size: 20px;   
 }
 nav a:hover {
 	color: #fbaf08
+}
+nav .navbar-brand {
+	font-family: 'Dancing Script', cursive;
+	font-size: 30px;
+	color: #444444; 
+	font-weight: 1200;
+}
+.navbar-brand span {
+	color: #ff6200; 
+	font-size: 40px; 
+	font-weight: bold; 
 }
 li {
 	padding-right: 25px; 
@@ -28,11 +39,10 @@ li {
 <nav class="navbar navbar-fixed-top">
 	<div class="container" style="position: relative; top: 10px">
 		<div class="navbar-header" style="padding-left: 25px">
-		<span class="navbar-brand" style="font-size: 25px">DonationFinder</span>
+		<a href="/home.do" class="navbar-brand"><span>D</span>onation<span>F</span>inder</a>
 		</div>  
 		<ul class="nav navbar-nav navbar-right">
-		<li><a href="/home.do">Home</a></li>
-		<li><a href="/donator.do">Donator</a></li>
+		<li style="margin-right: 40px"><a href="/donator.do">Donator</a></li>
 		<li><a href="/orglogin.do">Organization</a></li> 
 		</ul> 
 	</div> 
