@@ -83,7 +83,7 @@ label {
 <label>Email: </label> <input type="email" name="email" id="email" placeholder="Enter email...">
 <div id="iteminfo">
 <label>Items Needed: (Add as many as you want)</label>
-<input class="iteminput" name="items[]" placeholder="Enter item...">
+<input class="iteminput" name="items" placeholder="Enter item...">
 </div>
 <button type="button" id="add" onclick="addTextBox()">+</button>
 
@@ -122,7 +122,7 @@ label {
 	function addTextBox() {
 		let newdiv = document.createElement("div");  
 		let newbox = document.createElement("input"); 
-		newbox.name = "items[]"; 
+		newbox.name = "items"; 
 		newbox.placeholder = "Enter item..."; 
 		newbox.setAttribute("class", "iteminput")
 		newdiv.appendChild(newbox); 

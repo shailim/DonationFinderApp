@@ -27,7 +27,11 @@ public class OrgFile {
 		pw = new PrintWriter(forDetails); 
 		pw.println(id + "//" + name + "//" + address + "//" + phone + "//" + email);
 		pw = new PrintWriter(forItems); 
-		pw.println(id + "," + items);
+		pw.print(id);
+		for (int i = 0; i < items.length; i++) {
+			pw.print("," + items[i]);
+		}
+		pw.println(); 
 
 		forUsers.close(); 
 		forDetails.close();
