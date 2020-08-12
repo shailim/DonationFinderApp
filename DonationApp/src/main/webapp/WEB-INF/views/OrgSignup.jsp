@@ -65,6 +65,13 @@ label {
 .iteminput {
 	margin-bottom: 5px; 
 }
+button {
+	background: #fbaf08;
+	color: #fff; 
+	outline: none;
+	border: none; 
+	border-radius: 4px; 
+}
 </style>
 </head>
 
@@ -88,7 +95,7 @@ label {
 <button type="button" id="add" onclick="addTextBox()">+</button>
 
 <br>
-<button type="submit" id="last" style="background: #fbaf08;border:none;color:#444444">Sign Up</button>
+<button type="submit" id="last">Sign Up</button>
 <a style="margin-left: 150px; font-size: 15px" href="orglogin.do">Back to Log In</a>
 </form>
 </div>
